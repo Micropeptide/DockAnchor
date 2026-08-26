@@ -20,11 +20,13 @@ macOS only reveals the Dock on a display once the pointer reaches that display's
 
 ## Install
 
-1. Download the latest build from [Releases](https://github.com/Micropeptide/DockAnchor/releases).
-2. Unzip it and move `DockAnchor.app` to `/Applications` or `~/Applications`.
+1. Download `DockAnchor-1.0.0.dmg` from [Releases](https://github.com/Micropeptide/DockAnchor/releases).
+2. Open it and drag `DockAnchor.app` onto the `Applications` shortcut.
 3. **Right-click → Open** the first time (it's not notarized with a paid Apple Developer certificate, so Gatekeeper will otherwise refuse to launch it as "from an unidentified developer" — this is a one-time step).
 4. Grant Accessibility permission when prompted, or via the app's own "Open Accessibility Settings…" menu item.
 5. Pick your anchor display from the menu bar icon → **Anchor Screen**.
+
+(A plain `.zip` of the `.app` is also attached to each release, if you'd rather skip the DMG.)
 
 DockAnchor runs with no Dock icon of its own — look for its icon in the menu bar.
 
@@ -47,6 +49,12 @@ cd DockAnchor
 ```
 
 This builds the executable via Swift Package Manager, generates the `.app` bundle with its icon, ad-hoc signs it, and installs it to `~/Applications/DockAnchor.app`.
+
+To package a distributable `.dmg` (what's attached to each release):
+
+```bash
+./package_dmg.sh
+```
 
 To regenerate the icon after changing `Tools/generate_icon.swift`:
 

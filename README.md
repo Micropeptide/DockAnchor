@@ -20,7 +20,7 @@ macOS only reveals the Dock on a display once the pointer reaches that display's
 
 ## Install
 
-1. Download `DockAnchor-1.0.0.dmg` from [Releases](https://github.com/Micropeptide/DockAnchor/releases).
+1. Download the latest `DockAnchor-*.dmg` from [Releases](https://github.com/Micropeptide/DockAnchor/releases).
 2. Open it and drag `DockAnchor.app` onto the `Applications` shortcut.
 3. **Right-click → Open** the first time (it's not notarized with a paid Apple Developer certificate, so Gatekeeper will otherwise refuse to launch it as "from an unidentified developer" — this is a one-time step).
 4. Grant Accessibility permission when prompted, or via the app's own "Open Accessibility Settings…" menu item.

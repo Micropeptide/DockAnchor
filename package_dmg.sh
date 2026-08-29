@@ -4,7 +4,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-VERSION="1.0.0"
+VERSION="1.0.1"
 OUT_DMG="$(pwd)/DockAnchor-${VERSION}.dmg"
 STAGE=$(mktemp -d /tmp/dockanchor-dmg-stage.XXXXXX)
 RW_DMG=$(mktemp /tmp/dockanchor-rw.XXXXXX.dmg)

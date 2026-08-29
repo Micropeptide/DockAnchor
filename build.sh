@@ -4,7 +4,7 @@ cd "$(dirname "$0")"
 
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
 
-VERSION="1.0.0"
+VERSION="1.0.1"
 
 swift build -c release
 

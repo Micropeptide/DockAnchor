@@ -8,7 +8,13 @@ VERSION="1.0.0"
 
 swift build -c release
 
-APP_DIR="$HOME/Applications/DockAnchor.app"
+if [ -w /Applications ]; then
+    APP_DIR="/Applications/DockAnchor.app"
+else
+    mkdir -p "$HOME/Applications"
+    APP_DIR="$HOME/Applications/DockAnchor.app"
+    echo "Note: /Applications isn't writable, installing to $APP_DIR instead."
+fi
 rm -rf "$APP_DIR"
 mkdir -p "$APP_DIR/Contents/MacOS" "$APP_DIR/Contents/Resources"
 

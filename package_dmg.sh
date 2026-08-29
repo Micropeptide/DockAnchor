@@ -5,13 +5,14 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 VERSION="1.0.0"
-APP_SRC="$HOME/Applications/DockAnchor.app"
 OUT_DMG="$(pwd)/DockAnchor-${VERSION}.dmg"
 STAGE=$(mktemp -d /tmp/dockanchor-dmg-stage.XXXXXX)
 RW_DMG=$(mktemp /tmp/dockanchor-rw.XXXXXX.dmg)
 rm -f "$RW_DMG"
 
 ./build.sh
+APP_SRC="/Applications/DockAnchor.app"
+[ -d "$APP_SRC" ] || APP_SRC="$HOME/Applications/DockAnchor.app"
 
 mkdir -p "$STAGE"
 cp -R "$APP_SRC" "$STAGE/"

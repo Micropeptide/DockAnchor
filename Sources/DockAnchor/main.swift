@@ -191,7 +191,13 @@ final class DockGuard {
             let left = f.origin.x
             let right = f.origin.x + f.width
 
-            guard location.x >= left, location.x < right else { continue }
+            // Require the point to actually lie within this screen's own
+            // bounds — not just past its bottom threshold with no ceiling.
+            // Without the y-upper-bound, a screen stacked directly beneath
+            // this one (sharing part of its x-range) would have its entire
+            // area misread as "past this screen's bottom edge".
+            guard location.x >= left, location.x < right,
+                  location.y >= top, location.y < bottom else { continue }
 
             let ceiling = bottom - guardPixels
             if location.y >= ceiling {
